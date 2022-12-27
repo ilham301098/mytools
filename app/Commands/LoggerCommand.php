@@ -47,14 +47,13 @@ class LoggerCommand extends Command
      */
     public function handle()
     {
-        $version=shell_exec('cp -p '.$this->loc.' .');
+        $exec=shell_exec('cp -p '.$this->loc.' .');
         $file_str='';
         $this->checkLocation();
         $this->checkFormat();
         $this->createFile($file_str);
 
-        
-        $this->info($version);
+        $this->info($exec);
     }
 
     public function checkLocation(){
